@@ -22,7 +22,7 @@ fn main() {
         }
 
         let mut input = String::new();
-        io::stdin().read_line(&mut input);
+        io::stdin().read_line(&mut input).expect("Erro");
         let contain = input.as_str().trim() != "" && selected_word.contains(&input.as_str().trim());
         
         if contain {
@@ -41,7 +41,7 @@ fn main() {
     }
 
     let ganhou: bool = selected_word == guessed_word.join("");
-    if(ganhou){
+    if ganhou {
         println!("\n{} Parabéns você ganhou! {}\n", "-".repeat(10), "-".repeat(10));
     }else{
         println!("\n{} Que pena, você perdeu! {}", "-".repeat(10), "-".repeat(10));
